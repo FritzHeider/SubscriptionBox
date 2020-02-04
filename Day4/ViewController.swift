@@ -48,9 +48,14 @@ class ViewController: UIViewController {
         secondView.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
         thirdView.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
 
-        firstView.newLabel.text = "I'm page 1"
-        secondView.newLabel.text = "I'm page 2"
-        thirdView.newLabel.text = "I'm page 3"
+        firstView.button.isHidden = true
+        secondView.button.isHidden = true
+//        thirdView.button.isEnabled = true
+        
+        
+        firstView.newLabel.text = "A Revolutionary new Crypto"
+        secondView.newLabel.text = "Introducing FritzCoin"
+        thirdView.newLabel.text = "One Time Price Now"
         
         secondView.newImage.image = UIImage(named: "img2")
         thirdView.newImage.image = UIImage(named: "img3")
