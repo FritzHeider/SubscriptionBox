@@ -45,6 +45,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		979C61C623E9ED4100F5F1BE /* VIEW */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VIEW;
+			sourceTree = "<group>";
+		};
+		979C61C923E9EDA400F5F1BE /* CONTROLLER */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CONTROLLER;
+			sourceTree = "<group>";
+		};
+		979C61CA23E9EDB400F5F1BE /* MODEL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MODEL;
+			sourceTree = "<group>";
+		};
 		97F8366223E0A8DF002CA953 = {
 			isa = PBXGroup;
 			children = (
@@ -64,16 +85,19 @@
 		97F8366D23E0A8DF002CA953 /* Day4 */ = {
 			isa = PBXGroup;
 			children = (
+				979C61C623E9ED4100F5F1BE /* VIEW */,
 				97416BF223E36002007965CB /* OnboardingPage.swift */,
-				97F8366E23E0A8DF002CA953 /* AppDelegate.swift */,
+				979C61C923E9EDA400F5F1BE /* CONTROLLER */,
 				97F8367023E0A8DF002CA953 /* SceneDelegate.swift */,
+				97F8366E23E0A8DF002CA953 /* AppDelegate.swift */,
 				97F8367223E0A8DF002CA953 /* ViewController.swift */,
+				979C61CA23E9EDB400F5F1BE /* MODEL */,
 				97F8367423E0A8DF002CA953 /* Main.storyboard */,
 				97F8367723E0A8E0002CA953 /* Assets.xcassets */,
-				97F836A423E0C954002CA953 /* img2.png */,
 				97F836A523E0C954002CA953 /* img3.png */,
-				97F836A223E0BCB2002CA953 /* img1.png */,
+				97F836A423E0C954002CA953 /* img2.png */,
 				97F8367923E0A8E0002CA953 /* LaunchScreen.storyboard */,
+				97F836A223E0BCB2002CA953 /* img1.png */,
 				97F8367C23E0A8E0002CA953 /* Info.plist */,
 			);
 			path = Day4;
