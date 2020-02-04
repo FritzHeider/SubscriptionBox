@@ -3,9 +3,6 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    var newImage: UIImageView!
-    var button: UIButton!
-    var newLabel: UILabel!
     var scrollView: UIScrollView!
     var container: UIStackView!
     let firstView =  OnboardingPage()
@@ -47,10 +44,10 @@ class ViewController: UIViewController {
         firstView.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
         secondView.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
         thirdView.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
-
+        
         firstView.button.isHidden = true
         secondView.button.isHidden = true
-//        thirdView.button.isEnabled = true
+        //        thirdView.button.isEnabled = true
         
         
         firstView.newLabel.text = "A Revolutionary new Crypto"
@@ -59,10 +56,23 @@ class ViewController: UIViewController {
         
         secondView.newImage.image = UIImage(named: "img2")
         thirdView.newImage.image = UIImage(named: "img3")
-       
+        
+        thirdView.button.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
         
         
         
+        
+    }
+    
+    @objc func goToLogin() {
+        
+        let nextVC = MainViewController()
+        if let navigationController = self.navigationController{
+            self.navigationController?.present(nextVC, animated: true, completion: nil)
+
+        }else{
+            print("you dont have a naviigation controller")
+        }
         
     }
     
@@ -86,9 +96,14 @@ class ViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addGradientToView(view: self.view)
         
     }
+    
+    
 }
+

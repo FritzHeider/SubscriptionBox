@@ -28,7 +28,7 @@ class OnboardingPage: UIView {
         button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor(displayP3Red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        button.setTitle("Subscribe", for: .normal)
+        button.setTitle("Continue", for: .normal)
         self.addSubview(button)
         
         
@@ -62,5 +62,4 @@ class OnboardingPage: UIView {
         
         
     }
-    
 }
