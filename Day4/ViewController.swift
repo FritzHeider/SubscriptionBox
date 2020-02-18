@@ -66,13 +66,8 @@ class ViewController: UIViewController {
     
     @objc func goToLogin() {
         
-        let nextVC = MainViewController()
-        if let navigationController = self.navigationController{
-            self.navigationController?.present(nextVC, animated: true, completion: nil)
-
-        }else{
-            print("you dont have a naviigation controller")
-        }
+        let nextVC = LoginVC()
+        self.view.window!.rootViewController = nextVC
         
     }
     
