@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         button.backgroundColor = .black
         return button
     }()
-    let firstV = HomePage()
+   // let firstV = HomePage()
     
     
     
@@ -46,13 +46,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         addGradientToView(view: self.view)
     
-        view.addSubview(container)
-        NSLayoutConstraint.activate([
-            container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-                   container.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.85),
-                   container.topAnchor.constraint(equalTo: self.view.topAnchor),
-                   container.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-               ])
+//        view.addSubview(container)
+//        NSLayoutConstraint.activate([
+//            container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
+//                   container.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.85),
+//                   container.topAnchor.constraint(equalTo: self.view.topAnchor),
+//                   container.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+//               ])
         container.addArrangedSubview(button1)
         
         container.addArrangedSubview(button2)
