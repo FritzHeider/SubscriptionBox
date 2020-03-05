@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController {
       
     var container: UIStackView = {
@@ -37,7 +38,6 @@ class HomeViewController: UIViewController {
         button.backgroundColor = .black
         return button
     }()
-   // let firstV = HomePage()
     
     
     
@@ -46,10 +46,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         addGradientToView(view: self.view)
     
-//        view.addSubview(container)
+        view.addSubview(container)
 //        NSLayoutConstraint.activate([
-//            container.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-//                   container.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.85),
+//            container.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+//                   container.heightAnchor.constraint(equalTo: self.view.heightAnchor),
 //                   container.topAnchor.constraint(equalTo: self.view.topAnchor),
 //                   container.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
 //               ])

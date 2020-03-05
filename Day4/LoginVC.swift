@@ -8,9 +8,31 @@
 
 import UIKit
 
+
+
 class LoginVC: UIViewController {
     
+    var titleConstraintStart: NSLayoutConstraint!
+    var titleConstraintEnd: NSLayoutConstraint!
     
+    
+    let appNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "FritzCoin"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.black
+        label.textAlignment = .center
+        label.font = UIFont(name: "Times New Roman", size: 80)
+        return label
+    }()
+    
+    let mainImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "box")
+        return imageView
+    }()
     let loginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -23,10 +45,12 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewdidload!!!!!!!!")
+        addGradientToView(view: self.view)
+        setImageView()
+        setLabel()
         createButton()
     }
-
+    
     
     func createButton(){
         view.addSubview(loginButton)
@@ -34,16 +58,32 @@ class LoginVC: UIViewController {
         loginButton.addTarget(self, action: #selector(goNextScene), for: .touchUpInside)
         
         
-        loginButton.setTitle("Home", for: .normal)
+        //loginButton.setTitle("Home", for: .normal)
         loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
         loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
         loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
     }
+    func setImageView(){
+        self.view.addSubview(mainImage)
+        mainImage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        mainImage.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -20).isActive = true
+    }
+    
+    func setLabel(){
+        self.view.addSubview(appNameLabel)
+        appNameLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        appNameLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        titleConstraintEnd = appNameLabel.centerYAnchor.constraint(equalTo: mainImage.topAnchor, constant: -60)
+        titleConstraintStart = appNameLabel.centerYAnchor.constraint(equalTo: mainImage.centerYAnchor, constant: 5)
+        titleConstraintStart.isActive = true
+        appNameLabel.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
+    }
     
     @objc func goNextScene(){
-        let navigationController = UINavigationController(rootViewController: HomeViewController())
+        let navigationController = UINavigationController(rootViewController: TabBarController())
         self.view.window!.rootViewController = navigationController
         
     }
@@ -66,5 +106,15 @@ class LoginVC: UIViewController {
         
         //insert the gradient layer to the view layer
         view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        titleConstraintStart.isActive = false
+        titleConstraintEnd.isActive = true
+        UIView.animate(withDuration: 2.0, delay: 0.2,
+                       usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [ .curveEaseInOut],
+                       animations: {
+                        self.view.layoutIfNeeded()
+                        self.appNameLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
     }
 }
